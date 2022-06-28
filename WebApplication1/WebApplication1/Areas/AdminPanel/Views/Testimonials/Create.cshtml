@@ -1,0 +1,36 @@
+﻿@using WebApplication1.ViewModels.TestimonialViewModel
+@model TestimonialsCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create new card</h4>
+      
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="exampleInputUsername1" asp-for="Img">Card Img</label>
+                    <input class="form-control">
+                    <span asp-validation-for="Img" class="text-danger"></span><br/>
+                    <label for="exampleInputUsername1" asp-for="Name">Card Name</label>
+                    <input class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span><br />
+                    <label for="exampleInputUsername1" asp-for="Title">Card Title</label>
+                    <input class="form-control">
+                    <span asp-validation-for="Title" class="text-danger"></span><br />
+                    <label for="exampleInputUsername1" asp-for="Description">Card Description</label>
+                    <input class="form-control">
+                    <span asp-validation-for="Description" class="text-danger"></span><br />
+                    <label for="exampleInputUsername1" asp-for="Stars">Card Stars</label>
+                    <input class="form-control">
+                    <span asp-validation-for="Stars" class="text-danger"></span>
+
+                </div>
+           
+                <button type="submit" class="btn btn-primary me-2">Create</button>
+                <a class="btn btn-light" asp-action="Index">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Testimonials>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+    <div class="col-lg-10 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Testimonials table</h4>
+                <a class="btn btn-success" asp-action="Create">Create Card</a>
+
+                
+                <div class="table-responsive pt-3">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Image
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    Stars
+                                </th>
+                                <th>
+                                    Settings
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var cards in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @count
+                                </td>
+                                <td>
+                                    @cards.Img
+                                </td>
+                                <td>
+                                    @cards.Name
+                                </td>
+                                <td>
+                                    @cards.Title
+                                </td>
+                                <td>
+                                    @cards.Description
+                                </td>
+                                <td>
+                                    @cards.Stars
+                                </td>
+
+
+                                <td>
+                                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-Id="@cards.Id">
+                                        <i class="mdi mdi-delete"></i>
+                                    </a>
+                                    <a class="btn btn-sm btn-warning" asp-action="Update" asp-route-Id="@cards.Id">
+                                        <i class="mdi mdi-grease-pencil"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                                count++;
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
